@@ -33,7 +33,18 @@ public Map<String,Yebelo> fetchNumber(String nextNumber) {
 	assign.put("result",query2.get(0));
 	return assign;
 	}
-public void updateNumber(String nextNumber) {
-	
+public Map<String,Integer> updateNumber(int updNumber,int nextNumber) {
+	MapSqlParameterSource namedParameters = new MapSqlParameterSource();
+	namedParameters.addValue("updNumber",updNumber);
+	namedParameters.addValue("nextNumber",nextNumber);
+	String updateQuery="update yebola.fetchnumb set CategoryCode=:updNumber where CategoryCode=:nextNumber";
+	int update = namedParameterJdbcTemplate.update(updateQuery,namedParameters);
+	Map<String,Integer> assign=new HashMap<>();
+	if(update>0) {
+		assign.put("newValue",updNumber);
+		assign.put("oldValue",nextNumber);
+		
+	}
+	return assign;
 }
 }

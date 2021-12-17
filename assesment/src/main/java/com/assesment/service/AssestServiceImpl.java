@@ -19,7 +19,18 @@ public class AssestServiceImpl implements IAssestService {
 		return repositary.fetchNumber(nextNumber);
 		
 	}
-	public void updateNumber(String nextNumber) {
+	public Map<String,Integer> updateNumber(int nextNumber) {
 		
+		int number=nextNumber-1;
+		int updNumber=number+nextNumber;
+		
+		try {
+			Thread.sleep(5000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return repositary.updateNumber(updNumber,nextNumber);
 	}
 }

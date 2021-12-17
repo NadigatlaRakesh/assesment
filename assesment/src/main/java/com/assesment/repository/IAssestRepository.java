@@ -11,5 +11,5 @@ import com.assesment.dto.Yebelo;
 public interface IAssestRepository {
 
 	public Map<String,Yebelo> fetchNumber(String nextNumber);
-public void updateNumber(String nextNumber);
+	public Map<String,Integer> updateNumber(int updNumber,int nextNumber);
 }

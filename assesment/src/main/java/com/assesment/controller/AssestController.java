@@ -27,7 +27,8 @@ public class AssestController {
 	}
 	
 	@PostMapping(value="updateNumber/{nextNumber}")
-	public void updateNumber(@PathVariable("nextNumber") int nextNumber) {
-		System.out.println(nextNumber);
+	public ResponseEntity< Map<String,Integer>> updateNumber(@PathVariable("nextNumber") int nextNumber) {
+		
+		return new ResponseEntity<>(service.updateNumber(nextNumber), HttpStatus.OK);
 	}
 }
