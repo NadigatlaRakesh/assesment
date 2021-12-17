@@ -1,10 +1,17 @@
 package com.assesment.dto;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
 
-@Entity
+
 public class Yebelo {
 
+	private int CategoryCode;
+
+	
+	public int getCategoryCode() {
+		return CategoryCode;
+	}
+	public void setCategoryCode(int categoryCode) {
+		CategoryCode = categoryCode;
+	}
 	
 }
